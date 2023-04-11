@@ -2,26 +2,30 @@ const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = 1920;
 canvas.height = 1080;
-const startScreen = document.querySelector(".game-start");
+const startScreen = document.querySelector("#game-start");
+const endScreen = document.querySelector("#game-over");
 
 const bgImg = new Image();
-  bgImg.src = 'images/fondogameboard.png';
+  bgImg.src = 'images/fondoprincipal.png';
 
- 
 
 let spacePressed = false;
 let angle = 0;
 let score = 0;
 let velocity = 0;
-let gameOver = false;
+//let gameOver = false;
 
-function startGame() {
+
+function startGame(){
     console.log("Release Snitch");
     startScreen.style.display = "none";
     canvas.style.display = "block";
+    
     function animate(){
         ctx.clearRect(0,0, canvas.width, canvas.height);
-        
+        ctx.font = '50px Arial';
+        ctx.fillStyle = 'white';
+        ctx.fillText (score, 1750,100);
         bigback.update();
         mediumback.update();
         smallback.update();
@@ -37,16 +41,30 @@ function startGame() {
         dementorNumberTwo.update();
         dementorNumberThree.update();
 
-        dementorNumberOne.collision();
-        if (dementorNumberOne.collision()) return;
-        dementorNumberTwo.collision();
+        dementorNumberOne.collision();  
+        dementorNumberTwo.collision();    
         dementorNumberThree.collision();
+
+        if (dementorNumberOne.collision()) return;
+        if (dementorNumberTwo.collision()) return;
+        if (dementorNumberThree.collision()) return;
+
+        bigback.score();
+        mediumback.score();
+        smallback.score();
+        document.querySelector("#score span").innerHTML = score;
+       
+        
 
         requestAnimationFrame(animate);
         
     }
     animate();
 }
+
+
+   
+
 
 
 
@@ -56,7 +74,6 @@ window.addEventListener("load", () => {
 document.getElementById("start-button").onclick = () => {
     startGame();
 }
-
 
 document.addEventListener('keydown', function(e) {
  
@@ -70,7 +87,12 @@ document.addEventListener('keyup', function(e) {
     });
 
 document.getElementById("restart-button").onclick = () => {
-        startGame();
-    }
+     location.reload();
+
+        }
+        
+            
+        
 
 });
+

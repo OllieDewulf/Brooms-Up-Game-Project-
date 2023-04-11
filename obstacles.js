@@ -19,7 +19,6 @@ class bigFrontHoop {
         this.x -= this.movement;
         if(this.x < -500){
             this.x = 1920;
-            
         }
         this.draw();
     }  
@@ -39,6 +38,8 @@ class bigBackHoop {
         this.width = 327;
         this.height = 533;
         this.movement = 2;
+        
+        
     }
     draw(){
         ctx.drawImage(bigbackImage, this.x, this.y, this.width, this.height);   
@@ -49,7 +50,15 @@ class bigBackHoop {
             this.x = 1920;
         }
         this.draw();
-    }  
+    }
+    score(){
+        
+        if ( snitch.x + snitch.width < this.x + this.width &&
+            snitch.x > this.x  ) {
+            console.log('you scored!');
+            score += 1;
+        }
+    }
 }
 
 const bigback = new bigBackHoop();
@@ -103,7 +112,16 @@ class mediumBackHoop {
             this.x = 2920;
         }
         this.draw();
-    }  
+        
+    } 
+    score(){
+        
+        if (snitch.x < this.x  &&
+             snitch.width > this.x ) {
+            console.log('you scored2!');
+            score += 1;
+        }
+    } 
 }
 
 const mediumback = new mediumBackHoop();
@@ -157,6 +175,16 @@ class smallBackHoop {
         }
         this.draw();
     }  
+    score(){
+        
+        if ( snitch.x < this.x + this.width &&
+            snitch.x + snitch.width > this.x &&
+            snitch.y < this.y + this.height &&
+            snitch.height + snitch.y > this.y) {
+            console.log('you scored3!');
+            score += 1;
+        }
+    } 
 }
 
 const smallback = new smallBackHoop();
@@ -191,9 +219,14 @@ class dementorOne {
             snitch.y < this.y + this.height &&
             snitch.height + snitch.y > this.y
         ) {
-            gameOver = true;
+            //gameOver = true;
             console.log('Collision 1');
-            return true; 
+            endScreen.style.visibility = "visible";
+            canvas.style.display = "none";
+            return true;
+            
+            
+            
         }
     }
 }
@@ -230,8 +263,12 @@ class dementorTwo {
             snitch.y < this.y + this.height &&
             snitch.height + snitch.y > this.y
         ) {
-            gameOver = true;
-            console.log('Collision 2');
+           // gameOver = true;
+            console.log('Collision 1');
+            endScreen.style.visibility = "visible";
+            canvas.style.display = "none";
+            return true;
+            
         }
     }
 }
@@ -268,8 +305,12 @@ class dementorThree {
             snitch.y < this.y + this.height &&
             snitch.height + snitch.y > this.y
         ) {
-            gameOver = true;
-            console.log('Collision 3');
+           // gameOver = true;
+            console.log('Collision 1');
+            endScreen.style.visibility = "visible";
+            canvas.style.display = "none";
+            return true;
+
         }
     }
 }

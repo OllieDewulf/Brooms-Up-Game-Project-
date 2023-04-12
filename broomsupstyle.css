@@ -31,7 +31,7 @@ body {
 }
 
 #start-button img {
-    width:50%;
+    width: 50%;
 }
 
 #game-start p {
@@ -42,14 +42,14 @@ body {
 }
 
 #score {
-    font-size: 25px;
+    font-size: 28px;
     color: rgb(204, 214, 227);
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
 }
 
 #game-over {
-    padding: 20%;
+    padding: 18%;
     position: absolute;
     top: -140px;
     left: 0px;
@@ -57,8 +57,7 @@ body {
 }
 
 #game-over img{
-    width: 70%;
-    padding-top: 10px;
+    width: 55%;
 }
 
 #restart-button{
@@ -68,6 +67,6 @@ body {
 }
 
 #restart-button img {
-    width: 65%;
-    padding-top: 10%;
+    width: 60%;
+    padding-top: 5%;
 }

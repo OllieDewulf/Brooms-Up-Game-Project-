@@ -219,7 +219,7 @@ dementoroneImage.src = 'images/dementor-one.png';
 class dementorOne {
     constructor(){
         this.x = 3500;
-        this.y = 700;
+        this.y = 600;
         this.width = 508 / 1.7;
         this.height = 719 / 1.7;
         this.movement = 3;
@@ -234,7 +234,7 @@ class dementorOne {
         if(this.x < -500){
             this.x = 3020;
         }
-        if (score >= 800){
+        if (score >= 1000){
             this.movement = 8;
         }
         else if (score>=450){
@@ -290,8 +290,8 @@ class dementorTwo {
         if(this.x < -500){
             this.x = 5920;
         }
-        if (score >= 1000){
-            this.movement = 7;
+        if (score >= 1700){
+            this.movement = 10;
         }
         else if (score>=500){
             this.movement = 4;
@@ -299,7 +299,6 @@ class dementorTwo {
         else{
             this.movement = 2;
         }
-        
         this.draw();
     }
 
@@ -331,8 +330,8 @@ dementorthreeImage.src = 'images/dementor-three.png';
 class dementorThree {
     constructor(){
         this.x = 5000;
-        this.y = 600;
-        this.width = 642 / 1.7;
+        this.y = 500;
+        this.width = 408 / 1.7;
         this.height = 793 / 1.7;
         this.movement = 2;
     }
@@ -347,8 +346,8 @@ class dementorThree {
             this.x = 5000;
         }
        
-        if (score >= 1500){
-            this.movement = 10;
+        if (score >= 2500){
+            this.movement = 15;
         }
         else if (score>=550){
             this.movement = 6;

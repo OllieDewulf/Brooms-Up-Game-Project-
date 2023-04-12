@@ -1,4 +1,6 @@
 
+const audio2= new Audio ('images/wand.mp3');
+const audio3= new Audio ('images/laugh.m4a');
 
 // big front hoop 
 const bigfrontImage = new Image()
@@ -10,7 +12,7 @@ class bigFrontHoop {
         this.y = canvas.height + 185;
         this.width = 461;
         this.height = 744;
-        this.movement = 2;
+        this.movement = 2.2;
     }
     draw(){
         ctx.drawImage(bigfrontImage, this.x, this.y, this.width, this.height);
@@ -20,6 +22,7 @@ class bigFrontHoop {
         if(this.x < -500){
             this.x = 1920;
         }
+        
         this.draw();
     }  
 }
@@ -37,7 +40,7 @@ class bigBackHoop {
         this.y = canvas.height + 195;
         this.width = 327;
         this.height = 533;
-        this.movement = 2;
+        this.movement = 2.2;
         
         
     }
@@ -49,6 +52,7 @@ class bigBackHoop {
         if(this.x < -500){
             this.x = 1920;
         }
+    
         this.draw();
     }
     score(){
@@ -57,7 +61,11 @@ class bigBackHoop {
             snitch.x > this.x  ) {
             console.log('you scored!');
             score += 1;
+            audio2.play();
+            audio2.volume =0.08;
         }
+       
+       
     }
 }
 
@@ -74,7 +82,7 @@ class mediumFrontHoop {
         this.y = canvas.height + 50;
         this.width = 285;
         this.height = 888;
-        this.movement = 2;
+        this.movement = 2.2;
     }
     draw(){
         ctx.drawImage(mediumfrontImage, this.x, this.y, this.width, this.height);   
@@ -84,6 +92,8 @@ class mediumFrontHoop {
         if(this.x < -500){
             this.x = 2920;
         }
+       
+        
         this.draw();
     }  
 }
@@ -101,7 +111,7 @@ class mediumBackHoop {
         this.y = canvas.height + 51;
         this.width = 225;
         this.height = 396;
-        this.movement = 2;
+        this.movement = 2.2;
     }
     draw(){
         ctx.drawImage(mediumbackImage, this.x, this.y, this.width, this.height);   
@@ -116,11 +126,18 @@ class mediumBackHoop {
     } 
     score(){
         
-        if (snitch.x < this.x  &&
-             snitch.width > this.x ) {
+        if ( snitch.x < this.x + this.width &&
+            snitch.x + snitch.width > this.x &&
+            snitch.y < this.y + this.height &&
+            snitch.height + snitch.y > this.y ) {
             console.log('you scored2!');
             score += 1;
+            audio2.play();
+            audio2.volume =0.08;
+            
         }
+       
+    
     } 
 }
 
@@ -137,7 +154,7 @@ class smallFrontHoop {
         this.y = canvas.height + 430;
         this.width = 258;
         this.height = 510;
-        this.movement = 2;
+        this.movement = 2.2;
     }
     draw(){
         ctx.drawImage(smallfrontImage, this.x, this.y, this.width, this.height);   
@@ -147,6 +164,8 @@ class smallFrontHoop {
         if(this.x < -500){
             this.x = 3920;
         }
+       
+       
         this.draw();
     }  
 }
@@ -163,7 +182,7 @@ class smallBackHoop {
         this.y = canvas.height + 458;
         this.width = 233;
         this.height = 312;
-        this.movement = 2;
+        this.movement = 2.2;
     }
     draw(){
         ctx.drawImage(smallbackImage, this.x, this.y, this.width, this.height);   
@@ -173,6 +192,7 @@ class smallBackHoop {
         if(this.x < -500){
             this.x = 3920;
         }
+        
         this.draw();
     }  
     score(){
@@ -183,7 +203,12 @@ class smallBackHoop {
             snitch.height + snitch.y > this.y) {
             console.log('you scored3!');
             score += 1;
+            audio2.play();
+            audio2.volume =0.08;
+            
         }
+       
+       
     } 
 }
 
@@ -200,7 +225,7 @@ class dementorOne {
         this.y = 700;
         this.width = 508 / 1.7;
         this.height = 719 / 1.7;
-        this.movement = 2;
+        this.movement = 3;
     }
     draw(){
         ctx.drawImage(dementoroneImage, this.x, this.y, this.width, this.height);   
@@ -210,6 +235,16 @@ class dementorOne {
         if(this.x < -500){
             this.x = 3020;
         }
+        if (score >= 800){
+            this.movement = 8;
+        }
+        else if (score>=450){
+            this.movement = 5;
+        }
+        else{
+            this.movement = 2;
+        }
+       
         this.draw();
     }  
     collision(){
@@ -219,12 +254,13 @@ class dementorOne {
             snitch.y < this.y + this.height &&
             snitch.height + snitch.y > this.y
         ) {
-            //gameOver = true;
+            
             console.log('Collision 1');
+            audio3.play();
+            audio3.volume = 0.7;
             endScreen.style.visibility = "visible";
             canvas.style.display = "none";
-            return true;
-            
+            return true;    
             
             
         }
@@ -240,10 +276,10 @@ dementortwoImage.src = 'images/dementor-two.png';
 
 class dementorTwo {
     constructor(){
-        this.x = 4500;
-        this.y = 5;
-        this.width = 1108 / 1.8;
-        this.height = 715 / 1.8;
+        this.x = 5500;
+        this.y = 10;
+        this.width = 438 / 1.7;
+        this.height = 708 / 1.7;
         this.movement = 2;
     }
     draw(){
@@ -254,6 +290,16 @@ class dementorTwo {
         if(this.x < -500){
             this.x = 5920;
         }
+        if (score >= 1000){
+            this.movement = 7;
+        }
+        else if (score>=500){
+            this.movement = 4;
+        }
+        else{
+            this.movement = 2;
+        }
+        
         this.draw();
     }  
     collision(){
@@ -263,8 +309,10 @@ class dementorTwo {
             snitch.y < this.y + this.height &&
             snitch.height + snitch.y > this.y
         ) {
-           // gameOver = true;
-            console.log('Collision 1');
+           
+            console.log('Collision 2');
+            audio3.play();
+            audio3.volume = 0.7;
             endScreen.style.visibility = "visible";
             canvas.style.display = "none";
             return true;
@@ -283,7 +331,7 @@ dementorthreeImage.src = 'images/dementor-three.png';
 class dementorThree {
     constructor(){
         this.x = 5000;
-        this.y = 700;
+        this.y = 600;
         this.width = 642 / 1.7;
         this.height = 793 / 1.7;
         this.movement = 2;
@@ -296,6 +344,16 @@ class dementorThree {
         if(this.x < -500){
             this.x = 5000;
         }
+       
+        if (score >= 1500){
+            this.movement = 10;
+        }
+        else if (score>=550){
+            this.movement = 6;
+        }
+        else{
+            this.movement = 2;
+        }
         this.draw();
     }  
     collision(){
@@ -305,8 +363,10 @@ class dementorThree {
             snitch.y < this.y + this.height &&
             snitch.height + snitch.y > this.y
         ) {
-           // gameOver = true;
-            console.log('Collision 1');
+           
+            console.log('Collision 3');
+            audio3.play();
+            audio3.volume = 0.7;
             endScreen.style.visibility = "visible";
             canvas.style.display = "none";
             return true;

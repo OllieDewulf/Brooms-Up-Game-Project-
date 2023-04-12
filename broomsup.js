@@ -7,13 +7,17 @@ const endScreen = document.querySelector("#game-over");
 
 const bgImg = new Image();
   bgImg.src = 'images/fondoprincipal.png';
-
+  const wing1Image = new Image();
+  wing1Image.src = 'images/wing1.png';
+  const wing2Image = new Image();
+  wing2Image.src = 'images/wing2.png';
+  const audio1= new Audio ('images/theme.mp3');
 
 let spacePressed = false;
 let angle = 0;
 let score = 0;
 let velocity = 0;
-//let gameOver = false;
+
 
 
 function startGame(){
@@ -23,6 +27,7 @@ function startGame(){
     
     function animate(){
         ctx.clearRect(0,0, canvas.width, canvas.height);
+        
         ctx.font = '50px Arial';
         ctx.fillStyle = 'white';
         ctx.fillText (score, 1750,100);
@@ -31,6 +36,10 @@ function startGame(){
         smallback.update();
         
         snitch.draw();
+        ctx.drawImage(wing1Image, snitch.x-80, snitch.y, 186 /1.5, 59/1.5);
+        ctx.drawImage(wing2Image, snitch.x, snitch.y-60, 99/1.5, 101/1.5);
+       
+        
         snitch.update();
        
         bigfront.update();
@@ -44,6 +53,7 @@ function startGame(){
         dementorNumberOne.collision();  
         dementorNumberTwo.collision();    
         dementorNumberThree.collision();
+         
 
         if (dementorNumberOne.collision()) return;
         if (dementorNumberTwo.collision()) return;
@@ -54,7 +64,6 @@ function startGame(){
         smallback.score();
         document.querySelector("#score span").innerHTML = score;
        
-        
 
         requestAnimationFrame(animate);
         
@@ -70,6 +79,7 @@ function startGame(){
 
 window.addEventListener("load", () => {
     console.log("Snitch is ready");
+    audio1.play();
 
 document.getElementById("start-button").onclick = () => {
     startGame();

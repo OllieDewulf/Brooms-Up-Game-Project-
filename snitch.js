@@ -4,11 +4,11 @@ const snitchImage = new Image()
 
 class Snitch {
     constructor(){
-        this.x = 50;
+        this.x = 400;
         this.y = 500;
         this.velocity = 0;
-        this.width = 235;
-        this.height = 216;
+        this.width = 100;
+        this.height = 100;
         this.weight = 0.2;
     }
 
@@ -17,7 +17,7 @@ class Snitch {
             this.y = canvas.height- this.height;
             this.velocity = 0; 
         } else {
-            this.velocity*=0.9;
+            this.velocity*=0.9; 
             this.velocity += this.weight;
             this.y += this.velocity;
             

@@ -39,7 +39,6 @@ function startGame(){
         ctx.drawImage(wing1Image, snitch.x-80, snitch.y, 186 /1.5, 59/1.5);
         ctx.drawImage(wing2Image, snitch.x, snitch.y-60, 99/1.5, 101/1.5);
        
-        
         snitch.update();
        
         bigfront.update();
@@ -64,16 +63,10 @@ function startGame(){
         smallback.score();
         document.querySelector("#score span").innerHTML = score;
        
-
         requestAnimationFrame(animate);
-        
     }
     animate();
 }
-
-
-   
-
 
 
 
@@ -86,23 +79,16 @@ document.getElementById("start-button").onclick = () => {
 }
 
 document.addEventListener('keydown', function(e) {
- 
     if (e.code === 'Space') spacePressed = true;
      snitch.fly();
     });
-    
+
 document.addEventListener('keyup', function(e) {
     if (e.code === 'Space') spacePressed = false;
-
     });
 
 document.getElementById("restart-button").onclick = () => {
      location.reload();
-
         }
-        
-            
-        
-
 });
 

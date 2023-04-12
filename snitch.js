@@ -19,20 +19,16 @@ class Snitch {
         } else {
             this.velocity*=0.9; 
             this.velocity += this.weight;
-            this.y += this.velocity;
-            
+            this.y += this.velocity;  
         };
         if (this.y < 0) {
             this.y = 0;
             this.velocity = 0;
         }
        if (spacePressed) {this.fly()};  
-       
-       
     }
 
     draw(){
-        
         ctx.drawImage(snitchImage, this.x, this.y, this.width, this.height);
     }
 

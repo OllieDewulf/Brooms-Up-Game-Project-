@@ -1,9 +1,7 @@
-# Brooms-Up-Game-Project-
-Game project for Module 1 at Ironhack
-
 # Brooms Up!
 
-[Click here to see deployed game](http://github.com)
+Game project for Module 1 at Ironhack.
+[Click here to see deployed game](https://olliedewulf.github.io/Brooms-Up-Game-Project-/)
 
 ## Description
 
@@ -16,7 +14,7 @@ In 'Brooms Up!' the player can take part in the game of Quidditch. You can contr
 - Three dementors randomly appear to stop the snitch. Also from right to left of the screen.
 - As score goes up the dementor speed increases.
 
-# Backlog
+## Backlog
 
 - Scoreboard.
 - Music.

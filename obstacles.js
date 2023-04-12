@@ -219,7 +219,7 @@ dementoroneImage.src = 'images/dementor-one.png';
 class dementorOne {
     constructor(){
         this.x = 3500;
-        this.y = 600;
+        this.y = 700;
         this.width = 508 / 1.7;
         this.height = 719 / 1.7;
         this.movement = 3;
@@ -330,7 +330,7 @@ dementorthreeImage.src = 'images/dementor-three.png';
 class dementorThree {
     constructor(){
         this.x = 5000;
-        this.y = 500;
+        this.y = 400;
         this.width = 408 / 1.7;
         this.height = 793 / 1.7;
         this.movement = 2;

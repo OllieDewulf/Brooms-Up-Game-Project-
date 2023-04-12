@@ -145,6 +145,6 @@ _List of tasks in order of priority_
 
 ## Links
 
-- [Slides Link](http://slides.com)
+- [Slides Link](https://docs.google.com/presentation/d/1As-pbmtPN47eBoY3jmZh7sClXitifrquBsNe3Tjt674/edit#slide=id.g22ce9ce9f9c_0_73)
 - [Github repository Link](https://github.com/OllieDewulf/Brooms-Up-Game-Project-.git)
 - [Deployment Link](https://olliedewulf.github.io/Brooms-Up-Game-Project-/)

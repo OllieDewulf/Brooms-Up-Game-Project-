@@ -58,7 +58,6 @@ class bigBackHoop {
     score(){
         if ( snitch.x + snitch.width < this.x + this.width &&
             snitch.x > this.x  ) {
-            console.log('you scored!');
             score += 1;
             audio2.play();
             audio2.volume =0.08;
@@ -129,7 +128,6 @@ class mediumBackHoop {
             snitch.x + snitch.width > this.x &&
             snitch.y < this.y + this.height &&
             snitch.height + snitch.y > this.y ) {
-            console.log('you scored2!');
             score += 1;
             audio2.play();
             audio2.volume =0.08; 
@@ -254,8 +252,7 @@ class dementorOne {
             snitch.y < this.y + this.height &&
             snitch.height + snitch.y > this.y
         ) {
-            
-            console.log('Collision 1');
+                 
             audio3.play();
             audio3.volume = 0.7;
             endScreen.style.visibility = "visible";
@@ -310,7 +307,6 @@ class dementorTwo {
             snitch.height + snitch.y > this.y
         ) {
            
-            console.log('Collision 2');
             audio3.play();
             audio3.volume = 0.7;
             endScreen.style.visibility = "visible";

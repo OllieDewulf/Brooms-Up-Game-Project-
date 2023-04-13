@@ -74,7 +74,6 @@ function startGame(){
 
 
 window.addEventListener("load", () => {
-    console.log("Snitch is ready");
     
 
     musicButton.onclick = () => {

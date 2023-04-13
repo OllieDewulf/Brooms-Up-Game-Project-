@@ -140,9 +140,6 @@ In 'Brooms Up!' the player can take part in the game of Quidditch. You can contr
 - #canvas (startGame)
 - #game-over
 
-## Task
-_List of tasks in order of priority_
-
 ## Links
 
 - [Slides Link](https://docs.google.com/presentation/d/1As-pbmtPN47eBoY3jmZh7sClXitifrquBsNe3Tjt674/edit#slide=id.g22ce9ce9f9c_0_73)

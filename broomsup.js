@@ -12,11 +12,14 @@ const bgImg = new Image();
   const wing2Image = new Image();
   wing2Image.src = 'images/wing2.png';
   const audio1= new Audio ('images/theme.mp3');
+  const musicButton = document.getElementById("music");
 
+let AudioOn = false;
 let spacePressed = false;
 let angle = 0;
 let score = 0;
 let velocity = 0;
+
 
 
 
@@ -72,7 +75,18 @@ function startGame(){
 
 window.addEventListener("load", () => {
     console.log("Snitch is ready");
-    audio1.play();
+    
+
+    musicButton.onclick = () => {
+        AudioOn = !AudioOn;
+            if (AudioOn) {
+                musicButton.innerHTML = "MUSIC OFF";
+                audio1.pause();
+            } else {
+                musicButton.innerHTML = "MUSIC ON";
+                audio1.play();
+            }}
+
 
 document.getElementById("start-button").onclick = () => {
     startGame();
